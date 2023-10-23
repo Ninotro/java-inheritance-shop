@@ -21,6 +21,17 @@ public class Televisore extends Prodotto{
         this.smartTV = smartTV;
     }
 
+
+    @Override
+    public BigDecimal fidelityCard(boolean fidelity) {
+        BigDecimal prezzo = super.fidelityCard(fidelity);
+        if (smartTV) {
+            prezzo = prezzo.multiply(new BigDecimal(0.90));
+
+        }
+        return prezzo;
+    }
+
     @Override
     public String toString() {
         String isSmart = "No";

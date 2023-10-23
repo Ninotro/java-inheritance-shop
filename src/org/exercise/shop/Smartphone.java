@@ -33,4 +33,14 @@ public class Smartphone extends Prodotto {
                 ", memoria in GB=" + memoryCapacity
                 ;
     }
+
+    @Override
+    public BigDecimal fidelityCard(boolean fidelity) {
+        BigDecimal prezzo = super.fidelityCard(fidelity);
+        if (memoryCapacity < 32 ) {
+            prezzo = prezzo.multiply(new BigDecimal(0.95));
+
+        }
+       return prezzo;
+    }
 }

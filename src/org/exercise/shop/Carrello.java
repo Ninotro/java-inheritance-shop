@@ -8,13 +8,13 @@ public class Carrello {
         Scanner scanner = new Scanner(System.in);
 
         int numeroAcquisti = 1;
-        int scelta = 6;
+        int scelta = 0;
              System.out.println("Quanti oggetti vuoi comprare?");
              numeroAcquisti = Integer.parseInt(scanner.nextLine());
              Prodotto carrello[] = new Prodotto[numeroAcquisti];
 
 
-            for (int i = 0; i < carrello.length && scelta !=0; i++) {
+            for (int i = 0; i < carrello.length; i++) {
                 System.out.println();
                 System.out.println("Inserisci il tipo del tuo prodotto: 1 per Prodotto Generico 2 per Smartphone 3 per Televisore 4 per Cuffie");
                 scelta = Integer.parseInt(scanner.nextLine());
@@ -30,6 +30,9 @@ public class Carrello {
                     BigDecimal iva = new BigDecimal(scanner.nextLine());
                     carrello[i] = new Prodotto(nome,description,price,iva);
                     System.out.println(carrello[i]);
+
+
+
 
 
 

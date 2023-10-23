@@ -29,6 +29,16 @@ public class Cuffie extends Prodotto{
     }
 
     @Override
+    public BigDecimal fidelityCard(boolean fidelity) {
+        BigDecimal prezzo = super.fidelityCard(fidelity);
+        if (isWireless ) {
+            prezzo = prezzo.multiply(new BigDecimal(0.93));
+
+        }
+        return prezzo;
+    }
+
+    @Override
     public String toString() {
         String isSmart = "Cablate";
         if (isWireless) {

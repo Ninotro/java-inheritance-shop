@@ -66,10 +66,22 @@ public class Prodotto {
         return randomNumber;
     }
 
+    public BigDecimal fidelityCard(boolean fidelity) {
+
+        BigDecimal prezzo = entirePrice();
+        if (fidelity) {
+            BigDecimal sconto = prezzo.multiply(new BigDecimal("0.02")); // Calcola lo sconto del 2%
+            prezzo = prezzo.subtract(sconto);
+
+        }
+        return prezzo;
+    };
+
+
     @Override
     public String toString() {
         return
-                ", nome='" + name + '\'' +
+                "  Nome='" + name + '\'' +
                 ", descrizione='" + description + '\'' +
                 ", prezzo=" + price +
                 ", iva=" + iva
